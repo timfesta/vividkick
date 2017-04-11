@@ -1,0 +1,33 @@
+<div class="container">
+    <center>
+        <h1>Your Order</h1>
+    </center>
+</div>
+<div class="container">
+    <div class="row">
+            <img src="<%= asset_path @product.image_name %>">
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+    <br>
+        <center>
+            <a href="<%= @product.download_url %>">
+            <button id="btn-buy" type="button" class="btn btn-primary">HERE IS YOUR PRESET</button></a>
+        </center> 
+    </div> 
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <center>
+                <p>Thank You</p>
+                <p><%= @product.title%></p>
+                <p>$<%= @product.price %></p>
+            </center>        
+        </div>  
+    </div>
+</div>
+<br>
+<br>
