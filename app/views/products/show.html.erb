@@ -1,0 +1,102 @@
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+  <div>
+      <center>
+          <h1><%= @product.title %> - $<%= @product.price %></h1> 
+      </center>   
+  </div>
+  <br>
+
+<!-------- Product & Description Section ---------->
+
+  <div class="container-fluid" id="container-description">
+      <div class="row">
+          <div class="col-md-6">
+              <img src="<%= asset_path @product.image_name %>">
+
+              <!--------- Stripe -------------->
+
+                <div class="container">
+                    <%= form_tag charges_path, id:'chargeForm' do %>
+
+                        <% if flash[:error].present? %>
+                          <div id="error_explanation">
+                            <p><%= flash[:error] %></p>
+                          </div>
+                        <% end %>
+
+                      <script src="https://checkout.stripe.com/checkout.js"></script>
+                      <%= hidden_field_tag 'stripeToken' %>
+                      <%= hidden_field_tag 'amount', @product.price_in_cents %>
+                      <%= hidden_field_tag 'stripeEmail' %>
+                      <%= hidden_field_tag 'product_id', @product.id %>
+                      <br>
+                      <center>
+                          <button id="btn-buy" type="button" class="btn btn-primary"><h4>Buy This!</h4></button>
+                      </center>
+                      
+                    <script>
+                          var handler = StripeCheckout.configure({
+                            key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+                            token: function(token, arg) {
+                              document.getElementById("stripeToken").value = token.id;
+                              document.getElementById("stripeEmail").value = token.email;
+                              document.getElementById("chargeForm").submit();
+                            }
+                      });
+                      document.getElementById('btn-buy').addEventListener('click', function(e) {
+                            handler.open({
+                              name: '<%= @product.subtitle %>',
+                              description: '<%= @product.title %> ($<%= @product.price %>)',
+                              amount: <%= @product.price_in_cents %>
+                          });
+                          e.preventDefault();
+                         })
+                         </script>
+                    <% end %>
+                </div>
+          </div>
+          <div class="col-md-6">
+              <center>
+                  <h2>Description</h2>
+              </center>
+              <br>
+              <ul>
+                  <li>(Ignore for now) <strong>Product's Title:</strong> <%= @product.title %></li>
+                  <li>(Ignore for now) <strong>Product's Price:</strong> <%= @product.price %></li>
+                  <li>(Ignore for now) <strong>Product's Info:</strong> <%= @product.info %></li>
+              </ul>
+
+              <!------- Comments ------------>
+              
+                    <div class="panel">
+                        <p>
+                          <center><h3>Comments</h3></center>
+                          <ul>
+                              <li>Lorem Ispsum</li>
+                              <li>Lorem Ispsum</li>
+                              <li>Lorem Ispsum</li>
+                              <li>Lorem Ispsum</li>
+                          </ul>
+                        </p>
+                    </div>
+                        <center>
+                            <p class="slide">
+                              <div class="pull-me">
+                                Show Comments
+                              </div>
+                            </p> 
+                        </center>
+                        
+                 
+
+                <script>
+                    $(document).ready(function() {
+                        $('.pull-me').click(function() {
+                            $('.panel').slideToggle('slow')
+                        })
+                    })
+                </script>
+          </div>
+      </div>   
+  </div>
