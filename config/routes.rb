@@ -11,17 +11,17 @@ Rails.application.routes.draw do
 	get 'topseller' => 'photos#top_templates'
 	resources :photos
 
-  	resources :charges
-  	resources :purchases, only: [:show]
-  	resources :products 
+	resources :charges
+	resources :purchases, only: [:show]
+	resources :products 
 
-  	get 'templates' => 'statics#templates'
-  	get 'contact' => 'statics#contact'
-  	get 'about' => 'statics#about'
-  	get 'socialmedia' => 'statics#socialmedia'
-    get 'tutorials' => 'statics#tutorials'
-  	resources :statics
+	get 'templates' => 'statics#templates'
+	get 'contact' => 'statics#contact'
+	get 'about' => 'statics#about'
+	get 'socialmedia' => 'statics#socialmedia'
+  get 'tutorials' => 'statics#tutorials'
+	resources :statics
 
-  	root 'statics#home'
+	root 'statics#home'
 
 end
