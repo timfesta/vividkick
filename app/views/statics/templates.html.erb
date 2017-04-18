@@ -1,0 +1,64 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<center>
+				<h2>Lightroom Presets</h2>
+			</center>
+			<p>Lightroom presets are a pre-determined position of all or some of the sliders in Lightroom</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<!--------- Section for where the products are shown ------------>
+<div>
+	<div class="row" id="templates">
+		<% @products.each do |product| %>
+		<div class="col-md-4" id="column">
+			<section>
+				<a href="<%= product_path(product) %>">
+					<div class="product-image-container">
+						<br>
+						<br>
+						<br>
+						<center>
+							<img src="<%= asset_path product.image_name %>" class="picture" id="picture"/>
+						</center>
+						
+					</div>	
+				</a>
+				<br>
+				<br>
+				<p id="product-title">
+					<h3>
+						<center><%= product.title %></center>
+					</h3>
+				</p>
+				<p>
+					<h3>
+						<center>$<%= product.price %></center>
+					</h3>
+				</p>
+				<br>
+			</section>
+		</div>
+		<% end %>
+	</div>
+</div>
+<br>
+
+
+<!-- jQuery to make pictures bigger -->
+
+ <script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+<script>
+	$(function() {
+		$('.picture').hover( function(){
+			$(this).addClass('transition');
+
+		}, function() {
+			$('.picture').removeClass('transition');
+		});
+	});
+</script>

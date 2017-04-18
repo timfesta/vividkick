@@ -1,3 +1,212 @@
 // Place all the styles related to the statics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-picture .main-image {
+	background-image: url("vividkickhome.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 450px;
+}
+
+.main-picture {
+	position: relative;
+}
+
+.right-box {
+	position: absolute;
+	bottom: 125px;
+	right: 60px;
+	width: 265px;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 40px 30px 50px;
+	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.55);
+	
+}
+
+.right-box p {
+	line-height: 24px;
+	font-family: arial;
+	margin-top: 15px;
+}
+
+#box {
+	font-family: 'PT Sans';
+	font-size: 30px;
+	font-weight: 900;
+	line-height: 48px;
+}
+
+#edit {
+	font-size: 17px;
+}
+
+ #column {
+	border-left: 1px solid #C6C6C6;
+	border-right: 1px solid #C6C6C6;
+}
+
+#templates {
+	padding-left: 30px;
+	padding-right: 30px;
+
+
+}
+
+#picture {
+	padding: 3px;
+	border: thin solid black;
+	height: 200px;
+	width: 300px;
+}
+
+#title {
+	font-family: 'PT Sans', sans-serif;
+	color: #25383C;
+	text-decoration: none;
+}
+
+a {
+	font-family: 'PT Sans', sans-serif;
+	color: #25383C;
+}
+
+
+a:hover {
+	text-decoration: none;
+	color: #25383C;
+}
+
+/*.buy {
+	color: #39a3e2;
+	rgb: 57, 163, 257;
+}*/
+
+
+
+#explanation {
+	font-family: 'PT Sans', sans-serif;
+}
+
+#product-title {
+	font-size: 18px;
+	font-family: arial;
+	width: 60%;
+	height: 44%;
+	line-height: 27px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#product-description {
+	font-size: 18px;
+	font-family: arial;
+	width: 60%;
+	height: 44%;
+	line-height: 27px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.grey-button {
+	background-color: #C6C6C6;
+	width: 240px;
+	height: 55px;
+	border: none;
+	border-radius: 5px;
+	border-bottom: 1px solid #9B9B9B;
+	box-shadow: 0px 3px #9B9B9B;
+	display: block;
+	margin: auto;
+	margin-top: 8%;
+	padding: 10px 20px 10px;
+}
+
+
+/*Glyphicons */
+
+
+.custom-bullet li {
+    display: block;
+}
+
+.custom-bullet li:before {    
+    content: "\e080";
+    font-family: 'Glyphicons Halflings';
+    font-size: 9px;
+    float: left;
+    margin-top: 4px;
+    margin-left: -17px;
+    color: #40E0D0;
+}
+
+/*grain Glyphicon*/
+#grain {
+	font-size: 40px;
+}
+
+.menuItem {
+  display: inline;
+  height: 30px;
+  width: 100px;
+  background-color: #000;
+}
+
+#fattire {
+	background-color: #000;
+}
+
+/*Fade in CSS*/
+
+ #star {
+        visibility: hidden;
+    }
+
+   .fadeIn {
+        -webkit-animation: animat_show 0.8s;
+        animation: animat_show 0.8s;
+        visibility: visible !important;
+    }
+
+    @-webkit-keyframes animat_show{
+        0%{opacity:0}
+        100%{opacity:1}
+    }
+
+
+/*on the templates page scrolling over an image making it bigger*/
+
+ .transition {
+    -webkit-transform: scale(1.5); 
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.picture {
+	/*css to make it bigger*/
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+}
+
+
+/*      Contact Page       */
+
+#flashpicture {
+	width: 300px;
+	height: 300px;
+}
+
+/*      About Us Page       */
+
+#erinpicture {
+	width: 300px;
+	height: 300px;
+}
+
+#timpicture {
+	width: 300px;
+	height: 300px;
+}
