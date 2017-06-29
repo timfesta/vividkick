@@ -16,10 +16,10 @@ Rails.application.routes.draw do
 	resources :products 
 
 	get 'templates' => 'statics#templates'
-	get 'contact' => 'statics#contact'
-	get 'about' => 'statics#about'
-	get 'socialmedia' => 'statics#socialmedia'
-  get 'tutorials' => 'statics#tutorials'
+	# get 'contact' => 'statics#contact'
+	# get 'about' => 'statics#about'
+	# get 'socialmedia' => 'statics#socialmedia'
+  	get 'tutorials' => 'statics#tutorials'
 	resources :statics
 
 	root 'statics#home'
